@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Pulsujące Koło</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+</head>
+<body>
+  <script>
+    let t = 0;
+
+    function setup() {
+      createCanvas(400, 400);
+      noStroke();
+    }
+
+    function draw() {
+      background(255);
+
+      // pulsowanie koła
+      let puls = map(sin(t), -1, 1, 50, width);
+
+      fill(150); // szary kolor
+      ellipse(width / 2, height / 2, puls, puls);
+
+      t += 0.05; // przyspieszenie pulsowania
+    }
+  </script>
+</body>
+</html>
